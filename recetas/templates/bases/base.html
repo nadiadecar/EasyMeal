@@ -28,7 +28,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#valores">Nuestros Valores</a></li>
                         <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
                         <li class="nav-item"><a class="nav-link" href="#signup">Contact</a></li>
                     </ul>
@@ -42,25 +42,75 @@
                     <div class="text-center">
                         <h1 class="mx-auto my-0 text-uppercase">EasyMeal</h1>
                         <h2 class="subtitulo-texto mx-auto mt-2 mb-5">PRIMER KIT DE COMIDA PARA TU HOGAR</h2>
-                        <a class="btn btn-inicio" href="#about">Conócenos</a>
+                        <a class="btn btn-inicio" href="#valores">Conócenos</a>
                     </div>
                 </div>
             </div>
         </header>
-        <!-- About-->
-        <section class="about-section text-center" id="about">
-            <div class="container px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-lg-8">
-                        <h2 class="text-black mb-4">Built with Bootstrap 5</h2>
-                        <p class="text-black-50">
-                            Grayscale is a free Bootstrap theme created by Start Bootstrap. It can be yours right now, simply download the template on
-                            <a href="https://startbootstrap.com/theme/grayscale/">the preview page.</a>
-                            The theme is open source, and you can use it for any purpose, personal or commercial.
+        <!-- Valores-->
+        <section class="valores-section text-center" id="valores">
+            <div>
+                <h1 class="text-black nuestros-valores">Nuestros Valores</h2>
+                <div id="valores1">
+                    <div class="valores" id="Flexibilidad">
+                        <h3 class="text-black mb-3">
+                            Flexibilidad
+                        </h3>
+                        <p class="description-valores">
+                            Comprometidos con comidas asequibles que ahorran tiempo y que se adaptan a cualquier estilo de vida y presupuesto.
                         </p>
+                        <img class="img-fluid mb-3 mb-lg-0" src="{% static 'assets/img/Flexibilidad.png' %}" alt="..." />
+                    </div>
+                    <div class="valores" if="Ingredientes">
+                        <h3 class="text-black mb-3">
+                            Ingredientes Frescos
+                        </h3>
+                        <p class="description-valores">
+                            Productos de calidad tratados con cuidado desde el proveedor hasta tu casa.
+                        </p>
+                        <img class="img-fluid mb-3 mb-lg-0" src="{% static 'assets/img/Ingredientes.png' %}" alt="..." />
+                    </div>
+                    <div class="valores" if="Opciones">
+                        <h3 class="text-black mb-3">
+                            Posibilidades Deliciosas
+                        </h3>
+                        <p class="description-valores">
+                            Descubra nuevas y deliciosas posibilidades de comidas con un amplio menú elaborado por chefs.
+                        </p>
+                        <img class="img-fluid mb-3 mb-lg-0" src="{% static 'assets/img/Opciones.png' %}" alt="..." />
                     </div>
                 </div>
-                <img class="img-fluid" src="{% static 'assets/img/ipad.png' %}" alt="..." />
+                <div id="valores2">
+                    <div class="valores" if="Sustentabilidad">
+                        <h3 class="text-black mb-3">
+                            Soluciones Sostenibles
+                        </h3>
+                        <p class="description-valores">
+                            Reducir el desperdicio de alimentos y garantizar entregas con compensación de CO2 para su caja.
+                        </p>
+                        <img class="img-fluid mb-3 mb-lg-0" src="{% static 'assets/img/Sustentabilidad.png' %}" alt="..." />
+                    </div>
+                    <div class="valores" if="Salud">
+                        <h3 class="text-black mb-3">
+                            Salud
+                        </h3>
+                        <p class="description-valores">
+                            Creemos que la comida es un pilar estructural de la salud, es por esto que contamos con la validación de expertos nutricionistas en nuestras recetas.
+                        </p>
+                        <img class="img-fluid mb-3 mb-lg-0" src="{% static 'assets/img/Salud.png' %}" alt="..." />
+                    </div>
+                </div>
+                <div id="final-valores">
+                    <div class="texto-final-valores">
+                        <h2 class="texto-final-valores">
+                            CAMBIEMOS LA FORMA EN QUE LA GENTE COME
+                        </h2>
+                        <p class="texto-final-valores description-valores">
+                            Descubre el placer de cocinar con EasyMeal: tu solución para cenas deliciosas y sin estrés. Nosotros te entregamos ingredientes frescos y recetas fáciles directo a tu puerta, permitiéndote disfrutar la aventura culinaria en casa. Personaliza tu menú semanal, explora sabores nuevos y reduce el desperdicio de alimentos, todo mientras mantienes una alimentación saludable y balanceada. Con EasyMeal, transforma cualquier noche de la semana en una experiencia culinaria especial.
+                        </p>
+                    </div>
+                    <img class="img-fluid mb-3 mb-lg-0" src="{% static 'assets/img/healthy_food.jpg' %}" alt="..."  />
+                </div>
             </div>
         </section>
         <!-- Projects-->
