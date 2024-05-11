@@ -9,9 +9,9 @@
 </button>
 <div class="collapse navbar-collapse" id="navbarResponsive">
     <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="#valores">Nuestros Valores</a></li>
-        <li class="nav-item"><a class="nav-link" href="#unete">Projects</a></li>
-        <li class="nav-item"><a class="nav-link" href="#signup">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'inicio' %}">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'listado_recetas' %}">Recetas</a></li>
+
     </ul>
 </div>
 {% endblock %}
@@ -20,12 +20,12 @@
 {% block contenido %}
 
 <!-- Masthead-->
-<header class="masthead">
-    <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+<header class="inicio-recetas">
+    <div class="container px-4 px-lg-5 d-flex h-120 align-items-center justify-content-center">
         <div class="d-flex justify-content-center">
             <div class="text-center">
-                <h1 class="mx-auto my-0 text-uppercase">EasyMeal</h1>
-                <h2 class="subtitulo-texto mx-auto mt-2 mb-5">PRIMER KIT DE COMIDA PARA TU HOGAR</h2>
+                <h3 class="mx-auto my-0 text-uppercase">EasyMeal</h3>
+                <h1 class="subtitulo-texto mx-auto mt-2 mb-5">CONOCE NUESTROS MENÚS</h1>
             </div>
         </div>
     </div>

@@ -7451,6 +7451,10 @@ textarea.form-control-lg {
   height: 100% !important;
 }
 
+.h-120 {
+  height: 120% !important;
+}
+
 .h-auto {
   height: auto !important;
 }
@@ -11068,6 +11072,11 @@ body {
   border: 0;
 }
 
+.subtitulo-texto{
+  color: #fff;
+  font-weight: bold;
+}
+
 .masthead {
   position: relative;
   width: 100%;
@@ -11096,10 +11105,6 @@ body {
   font-size: 1rem;
 }
 
-.subtitulo-texto{
-  color: #fff;
-  font-weight: bold;
-}
 @media (min-width: 768px) {
   .masthead h1, .masthead .h1 {
     font-size: 4rem;
@@ -11278,4 +11283,55 @@ body {
 
 .text-easymeal{
   color: #617B47;
+}
+
+
+.inicio-recetas {
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 10rem;
+  padding: 5rem 0;
+  background: linear-gradient(to bottom, #00000085 0%, #00000085 75%, #00000085 100%), url("../assets/img/cocinando.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+}
+.inicio-recetas h3, .inicio-recetas .h3 {
+  font-family: "Noto Color Emoji";
+  font-weight: bold;
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+  letter-spacing: 0.8rem;
+  background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
+  -webkit-text-fill-color: #94ff79;
+  -webkit-background-clip: text;
+          background-clip: text;
+}
+.inicio-recetas h2, .inicio-recetas .h2 {
+  max-width: 20rem;
+  font-size: 1rem;
+}
+
+@media (min-width: 768px) {
+  .inicio-recetas h1, .inicio-recetas .h1 {
+    font-size: 3rem;
+    line-height: 3rem;
+  }
+}
+@media (min-width: 992px) {
+  .inicio-recetas {
+    height: 60vh;
+    padding: 0;
+  }
+  .inicio-recetas h1, .inicio-recetas .h1 {
+    font-size: 4rem;
+    line-height: 4rem;
+    letter-spacing: 0.8rem;
+  }
+  .inicio-recetas h2, .inicio-recetas .h2 {
+    max-width: 30rem;
+    font-size: 1.25rem;
+  }
 }
