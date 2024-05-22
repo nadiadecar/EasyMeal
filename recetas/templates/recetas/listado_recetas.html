@@ -1,8 +1,13 @@
 {% extends 'bases/base.html' %}
 {% load static %}
 
+{% block styles %}
+    <link href="{% static 'css/listado.css' %}" rel="stylesheet" />
+{% endblock %}
+
 
 {% block navbar %}
+<a class="navbar-brand" href="#page-top">EasyMeal</a>
 <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
     Menu
     <i class="fas fa-bars"></i>
@@ -31,132 +36,19 @@
     </div>
 </header>
 <!-- Valores-->
-<section class="valores-section text-center" id="valores">
-    <div>
-        <h1 class="text-black nuestros-valores">Nuestros Valores</h2>
-        <div id="valores1">
-            <div class="valores" id="Flexibilidad">
-                <h3 class="text-black mb-3">
-                    Flexibilidad
-                </h3>
-                <p class="description-valores">
-                    Comprometidos con comidas asequibles que ahorran tiempo y que se adaptan a cualquier estilo de vida y presupuesto.
-                </p>
-                <img class="img-fluid mb-3 mb-lg-0" src="{% static 'assets/img/Flexibilidad.png' %}" alt="..." />
+<section class="valores-section text-center" id="recetas">
+    <div class="recetas-section">
+        <h2 class="text-black nuestros-valores">Recetas Disponibles</h2>
+        <div class="listado-recetas">
+            {% for receta in recetas_disponibles %}
+            <div class="carta-receta">
+                <img class="img-fluid img-receta" src="{% static receta.imagen %}" alt="..." />
+                <p class="nombre-receta">{{receta.nombre}}</p>
+                <button class="btn btn-primary btn-ver-receta" >
+                    <a class="link-btn" href="{% url 'receta' receta.id %}">Ver Receta</a>
+                </button>
             </div>
-            <div class="valores" if="Ingredientes">
-                <h3 class="text-black mb-3">
-                    Ingredientes Frescos
-                </h3>
-                <p class="description-valores">
-                    Productos de calidad tratados con cuidado desde el proveedor hasta tu casa.
-                </p>
-                <img class="img-fluid mb-3 mb-lg-0" src="{% static 'assets/img/Ingredientes.png' %}" alt="..." />
-            </div>
-            <div class="valores" if="Opciones">
-                <h3 class="text-black mb-3">
-                    Posibilidades Deliciosas
-                </h3>
-                <p class="description-valores">
-                    Descubra nuevas y deliciosas posibilidades de comidas con un amplio menú elaborado por chefs.
-                </p>
-                <img class="img-fluid mb-3 mb-lg-0" src="{% static 'assets/img/Opciones.png' %}" alt="..." />
-            </div>
-        </div>
-        <div id="valores2">
-            <div class="valores" if="Sustentabilidad">
-                <h3 class="text-black mb-3">
-                    Soluciones Sostenibles
-                </h3>
-                <p class="description-valores">
-                    Reducir el desperdicio de alimentos y garantizar entregas con compensación de CO2 para su caja.
-                </p>
-                <img class="img-fluid mb-3 mb-lg-0" src="{% static 'assets/img/Sustentabilidad.png' %}" alt="..." />
-            </div>
-            <div class="valores" if="Salud">
-                <h3 class="text-black mb-3">
-                    Salud
-                </h3>
-                <p class="description-valores">
-                    Creemos que la comida es un pilar estructural de la salud, es por esto que contamos con la validación de expertos nutricionistas en nuestras recetas.
-                </p>
-                <img class="img-fluid mb-3 mb-lg-0" src="{% static 'assets/img/Salud.png' %}" alt="..." />
-            </div>
-        </div>
-        <div id="final-valores">
-            <div class="texto-final-valores">
-                <h2 class="texto-final-valores">
-                    CAMBIEMOS LA FORMA EN QUE LA GENTE COME
-                </h2>
-                <p class="texto-final-valores description-valores">
-                    Descubre el placer de cocinar con EasyMeal: tu solución para cenas deliciosas y sin estrés. Nosotros te entregamos ingredientes frescos y recetas fáciles directo a tu puerta, permitiéndote disfrutar la aventura culinaria en casa. Personaliza tu menú semanal, explora sabores nuevos y reduce el desperdicio de alimentos, todo mientras mantienes una alimentación saludable y balanceada. Con EasyMeal, transforma cualquier noche de la semana en una experiencia culinaria especial.
-                </p>
-            </div>
-            <img class="img-fluid mb-3 mb-lg-0" src="{% static 'assets/img/healthy_food.jpg' %}" alt="..."  />
-        </div>
-    </div>
-</section>
-<!-- Únete -->
-<section class="unete-section bg-light" id="unete">
-    <div class="container px-4 px-lg-5">
-        <!-- Project One Row-->
-        <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
-            <div class="col-lg-6"><img class="img-fluid" src="{% static 'assets/img/demo-image-01.jpg' %}" alt="..." /></div>
-            <div class="col-lg-6">
-                <div class="bg-black text-center h-100 project">
-                    <div class="d-flex h-100">
-                        <div class="project-text w-100 my-auto text-center text-lg-left">
-                            <h3 class="text-white">Únete a nosotros</h4>
-                            <p class="mb-0 text-white-80">Súmate a la nueva forma de comer! Explora nuestras opciones y haz tu primer pedido. </p>
-                            <a class="btn btn-unete" href="#valores">Ver Recetas</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Signup-->
-<section class="signup-section" id="signup">
-    <div class="container px-4 px-lg-5">
-        <div class="row gx-4 gx-lg-5">
-            <div class="col-md-10 col-lg-8 mx-auto text-center">
-                <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
-                <h2 class="text-white mb-5">Subscribe to receive updates!</h2>
-                <!-- * * * * * * * * * * * * * * *-->
-                <!-- * * SB Forms Contact Form * *-->
-                <!-- * * * * * * * * * * * * * * *-->
-                <!-- This form is pre-integrated with SB Forms.-->
-                <!-- To make this form functional, sign up at-->
-                <!-- https://startbootstrap.com/solution/contact-forms-->
-                <!-- to get an API token!-->
-                <form class="form-signup" id="contactForm" data-sb-form-api-token="API_TOKEN">
-                    <!-- Email address input-->
-                    <div class="row input-group-newsletter">
-                        <div class="col"><input class="form-control" id="emailAddress" type="email" placeholder="Enter email address..." aria-label="Enter email address..." data-sb-validations="required,email" /></div>
-                        <div class="col-auto"><button class="btn btn-primary disabled" id="submitButton" type="submit">Notify Me!</button></div>
-                    </div>
-                    <div class="invalid-feedback mt-2" data-sb-feedback="emailAddress:required">An email is required.</div>
-                    <div class="invalid-feedback mt-2" data-sb-feedback="emailAddress:email">Email is not valid.</div>
-                    <!-- Submit success message-->
-                    <!---->
-                    <!-- This is what your users will see when the form-->
-                    <!-- has successfully submitted-->
-                    <div class="d-none" id="submitSuccessMessage">
-                        <div class="text-center mb-3 mt-2 text-white">
-                            <div class="fw-bolder">Form submission successful!</div>
-                            To activate this form, sign up at
-                            <br />
-                            <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
-                        </div>
-                    </div>
-                    <!-- Submit error message-->
-                    <!---->
-                    <!-- This is what your users will see when there is-->
-                    <!-- an error submitting the form-->
-                    <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3 mt-2">Error sending message!</div></div>
-                </form>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </section>

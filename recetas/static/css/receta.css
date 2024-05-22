@@ -1,0 +1,13 @@
+.visualizador-recetas{
+    background-color: #B0BDA3;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    column-gap: 20px;
+    padding: 6rem;
+    height: 82vh;
+}
+
+.imagen-receta-completa{ 
+    width: 90%;
+    aspect-ratio: 1/0.8;
+}

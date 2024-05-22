@@ -1,0 +1,51 @@
+{% extends 'bases/base.html' %}
+{% load static %}
+
+{% block styles %}
+    <link href="{% static 'css/receta.css' %}" rel="stylesheet" />
+{% endblock %}
+
+
+{% block navbar %}
+<a class="navbar-brand text-white" href="#page-top">EasyMeal</a>
+<button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    {{ receta.nombre }}
+    <i class="fas fa-bars"></i>
+</button>
+<div class="collapse navbar-collapse" id="navbarResponsive">
+    <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="{% url 'inicio' %}">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'recetas' %}">Recetas</a></li>
+
+    </ul>
+</div>
+{% endblock %}
+
+{% block contenido %}
+
+<div class="visualizador-recetas">
+    <img class="img-fluid imagen-receta-completa" src="{% static receta.imagen %}" alt="..." />
+    <div>
+        <h2>{{receta.nombre}}</h2>
+        <br>
+        <h2> Ingredientes </h2>
+        <br>
+        <p>
+            {% for ingrediente in receta.ingredientes %}
+            | {{ingrediente}} |
+            {% endfor %}
+        </p>
+        <br>
+        <h2> Pasos </h2>
+        <br>
+        <p>
+            {% for key, value in receta.pasos.items %}
+                {{key}}.- {{value}} <br>
+            {% endfor %}
+
+        </p>
+    </div>
+</div>
+
+
+{% endblock %}

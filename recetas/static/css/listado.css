@@ -1,0 +1,45 @@
+.listado-recetas{ 
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    column-gap: 10px;
+    row-gap: 10px;
+    justify-self: center;
+    width: 80%;
+}
+
+.carta-receta{
+    background-color: white;
+    display: grid;
+    justify-items: center;
+    justify-content: center;
+    border-radius: 25px;
+}
+
+.recetas-section{ 
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    grid-template-columns: 100%;
+    row-gap: 1rem;
+}
+
+.img-receta{ 
+    width: 90%;
+    aspect-ratio: 1/1;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+}
+
+.btn-ver-receta{
+    margin-bottom: 10px;
+}
+
+.link-btn{
+    color: white;
+}
+
+.nombre-receta{
+    height: 20px !important;
+    margin-bottom: 3rem !important;
+}
