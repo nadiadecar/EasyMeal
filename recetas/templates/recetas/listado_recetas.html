@@ -45,7 +45,7 @@
                 <img class="img-fluid img-receta" src="{% static receta.imagen %}" alt="..." />
                 <p class="nombre-receta">{{receta.nombre}}</p>
                 <button class="btn btn-primary btn-ver-receta" >
-                    <a class="link-btn" href="{% url 'receta' receta.id %}">Ver Receta</a>
+                    <a class="link-btn text-white" href="{% url 'receta' receta.id %}">Ver Receta</a>
                 </button>
             </div>
             {% endfor %}
